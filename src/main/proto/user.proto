@@ -1,0 +1,41 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "com.rayvision.rpc.dto.user";
+option java_outer_classname = "User";
+option objc_class_prefix = "RTG";
+
+package userService;
+
+service UserSerivce {
+    rpc GetUserInfo (RequestUserInfo) returns (ResponseUserInfo) {
+    }
+}
+
+message RequestUserInfo {
+    //用户ID
+    int64 userId = 1;
+}
+
+message ResponseUserInfo {
+
+    //用户ID
+    int64 userId = 1;
+
+    //用户名
+    string userName = 2;
+
+    //软件类型 max,maya,vue,c4d,blender,sotimage,houdini,其它
+    //int32 softType = 5;
+    //是否自动提交任务(1自动提交2不自动提交)
+    //int32 autoCommit = 6;
+
+    // //主账号Id
+    //    int64 mainUserId = 2;
+    //区域
+    //  int32 zone = 4;
+
+
+}
+
+
